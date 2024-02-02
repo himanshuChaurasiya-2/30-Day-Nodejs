@@ -17,7 +17,7 @@ async function readFileContent(filepath) {
     if (error.code === "ENOENT") {
       console.error("\nExpected Output: Error reading file: ENOENT: no such file or directory...\n");
     } else {
-      console.error("\nError occured : ${error.message}");
+      console.error(`\nError occured : ${error.message}\n`);
     }
 
   }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 13</title>
+  </head>
+  <body>
+    <h1>WebSocket</h1>
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+      const socket = new WebSocket("ws://localhost:3000");
+
+      // Event listener for when the WebSocket connection is established
+      socket.addEventListener("open", function (event) {
+        console.log("WebSocket connection established.");
+      });
+
+      // Event listener for receiving messages from the WebSocket server
+      socket.addEventListener("message", function (event) {
+        // console.log(`message from server: ${event.data}`);
+        console.log("Received message from server:", event.data);
+      });
+
+      // Function to send a message to the WebSocket server
+      function sendMessage() {
+        const messageInput = document.getElementById("messageInput");
+        const message = messageInput.value;
+        if (message.trim() !== "") {
+          socket.send(message);
+          console.log("Sent message to server:", message);
+          messageInput.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

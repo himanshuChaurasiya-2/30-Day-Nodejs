@@ -26,3 +26,4 @@ Expected Output:
 Test Cases:
                     Request to / should return the content of "public/index.html".
                     Request to /styles/style.css should return the content of "public/styles/style.css".
+

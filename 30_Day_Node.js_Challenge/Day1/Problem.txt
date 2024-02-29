@@ -29,3 +29,4 @@ readFileContent('test-files/empty-file.txt');
 
 readFileContent('test-files/nonexistent-file.txt');
 // Expected Output: Error reading file: ENOENT: no such file or directory...
+
